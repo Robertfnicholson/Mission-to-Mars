@@ -64,11 +64,11 @@ def scrape():
    # the document will be modified ("$set") with the data in question.
    # Finally, the option we'll include is upsert=True. This indicates to Mongo to create a new document if one doesn't
    # already exist, and new data will always be saved (even if we haven't already created a document for it).
-   mars.update_one({}, {"$set":mars_data}, upsert=True)
+   # mars.update_one({}, {"$set":mars_data}, upsert=True)
 
    # Finally, we will add a redirect after successfully scraping the data: return redirect('/', code=302). This will
    # navigate our page back to / where we can see the updated content.
-   return redirect('/', code=302)
+   # return redirect('/', code=302)
 
 # The final bit of code we need for Flask is to tell it to run. Add these two lines to the bottom of your script:
 
