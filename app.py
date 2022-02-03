@@ -54,21 +54,21 @@ def scrape():
    mars.update_one({}, {"$set":mars_data}, upsert=True)
    return redirect('/', code=302)
 
-# Now that we've gathered new data, we need to update the database using .update_one().
-# Let's take a look at the syntax we'll use, as shown below:
-# .update_one(query_parameter, {"$set": data}, options)
-# Here, we're inserting data, but not if an identical record already exists. In the query_parameter, we can
-# specify a field (e.g. {"news_title": "Mars Landing Successful"}), in which case MongoDB will update a document
-# with a matching news_title. Or it can be left empty ({}) to update the first matching document in the collection.
-# Next, we'll use the data we have stored in mars_data. The syntax used here is {"$set": data}. This means that
-# the document will be modified ("$set") with the data in question.
-# Finally, the option we'll include is upsert=True. This indicates to Mongo to create a new document if one doesn't
-# already exist, and new data will always be saved (even if we haven't already created a document for it).
-mars.update_one({}, {"$set":mars_data}, upsert=True)
+   # Now that we've gathered new data, we need to update the database using .update_one().
+   # Let's take a look at the syntax we'll use, as shown below:
+   # .update_one(query_parameter, {"$set": data}, options)
+   # Here, we're inserting data, but not if an identical record already exists. In the query_parameter, we can
+   # specify a field (e.g. {"news_title": "Mars Landing Successful"}), in which case MongoDB will update a document
+   # with a matching news_title. Or it can be left empty ({}) to update the first matching document in the collection.
+   # Next, we'll use the data we have stored in mars_data. The syntax used here is {"$set": data}. This means that
+   # the document will be modified ("$set") with the data in question.
+   # Finally, the option we'll include is upsert=True. This indicates to Mongo to create a new document if one doesn't
+   # already exist, and new data will always be saved (even if we haven't already created a document for it).
+   mars.update_one({}, {"$set":mars_data}, upsert=True)
 
-# Finally, we will add a redirect after successfully scraping the data: return redirect('/', code=302). This will
-# navigate our page back to / where we can see the updated content.
-return redirect('/', code=302)
+   # Finally, we will add a redirect after successfully scraping the data: return redirect('/', code=302). This will
+   # navigate our page back to / where we can see the updated content.
+   return redirect('/', code=302)
 
 # The final bit of code we need for Flask is to tell it to run. Add these two lines to the bottom of your script:
 
