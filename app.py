@@ -1,3 +1,4 @@
+# Code and comments came from "Data Analytics Boot Camp" class, module 10.
 # Import tools and dependecies
 # The first line says that we'll use Flask to render a template, redirecting to another url, and creating a URL.
 # The second line says we'll use PyMongo to interact with our Mongo database.
