@@ -12,7 +12,8 @@
   </head>
   <body>
     <div class="container">
-      <!-- Add Jumbotron to Header -->
+      <!-- Add Jumbotron to Header. Referenced code from Emmanuel Martinez (emmanuelmartinezs) "Mission_to_Mars_Challenge.ipynb" from GitHub. -->
+      <!-- Referenced code to add additional style to jumbotron including change in background, position and height.>
       <div class="jumbotron text-center" style="background-image: url('https://wallpapercave.com/wp/wp10401654.jpg'); background-position: center; background-size: cover;height: 250px;">>
         <h1 style="color:white">Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
@@ -38,6 +39,7 @@
           <h2>Featured Mars Image</h2>
           <!-- if images is False/None/non-existent, then default to error message -->
           <img
+            <!-- iReference code from Emmanuel Martinez (emmanuelmartinezs) "Mission_to_Mars_Challenge.ipynb" from GitHub used to change src parameters -->
             src="{{mars.featured_image | default('static/images/error.png', true)}}"
             class="img-responsive"
             alt="Responsive image"
@@ -60,6 +62,7 @@
         </div>
 
         {% for hemisphere in mars.hemispheres %}
+         <!-- iReference code from Emmanuel Martinez (emmanuelmartinezs) "Mission_to_Mars_Challenge.ipynb" from GitHub used to correct syntax error. -->
         <div class="col-md-6">
           <div class="thumbnail">
             <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="Responsive image" class="img-responsive" >
